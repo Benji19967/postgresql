@@ -39,7 +39,8 @@ https://tomcam.github.io/postgres/#using-psql
 ```SQL
 create table if not exists birthday (
   id              SERIAL,
-  first_name      VARCHAR(100) NOT NULL, last_name VARCHAR(100) NOT NULL,
+  first_name      VARCHAR(100) NOT NULL, 
+  last_name       VARCHAR(100) NOT NULL,
   birthday        DATE NOT NULL
 );
 ```
@@ -53,7 +54,7 @@ INSERT INTO birthday VALUES(DEFAULT, 'John', 'Doe', '1993-11-19');
 ### Delete from a table
 
 ```SQL
-DELETE FROM birthday where first_name = 'John';
+DELETE FROM birthday WHERE first_name = 'John';
 ```
 
 ### Select all rows from a table
