@@ -30,4 +30,34 @@ https://tomcam.github.io/postgres/#using-psql
 - `\dt`: display all relations (tables) in database
 - `\d <name of table>` or `\d+ <name of table>`: display columns (field names) of a table
 - `\du` or `\du <user>`: display user roles
+- `\timing on/off`: turn timing on or off
 
+## SQL
+
+### Create a table
+
+```SQL
+create table if not exists birthday (
+  id              SERIAL,
+  first_name      VARCHAR(100) NOT NULL, last_name VARCHAR(100) NOT NULL,
+  birthday        DATE NOT NULL
+);
+```
+
+### Insert into a table
+
+```SQL
+INSERT INTO birthday VALUES(DEFAULT, 'John', 'Doe', '1993-11-19');
+```
+
+### Delete from a table
+
+```SQL
+DELETE FROM birthday where first_name = 'John';
+```
+
+### Select all rows from a table
+
+```SQL
+SELECT * FROM birthday;
+```
