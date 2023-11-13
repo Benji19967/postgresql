@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "psql"
+version = "0.1.0"
+description = "PostgreSQL Python sandbox"
+authors = [ "Benjamin Labrecque" ]
+packages = [
+    { include = "psql" }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"
+psycopg2 = "^2.9.9"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.1"
+black = "^23.1.0"
+mypy = "^1.1.1"
+isort = "^5.12.0"
+
+[tool.mypy]
+files = "psql"
+strict = true
+namespace_packages = true
+explicit_package_bases = true
