@@ -57,8 +57,39 @@ INSERT INTO birthday VALUES(DEFAULT, 'John', 'Doe', '1993-11-19');
 DELETE FROM birthday WHERE first_name = 'John';
 ```
 
+### Delete all rows from a table
+
+```SQL
+DELETE FROM birthday;
+```
+
 ### Select all rows from a table
 
 ```SQL
 SELECT * FROM birthday;
 ```
+
+### Count number of rows in a table
+
+```SQL
+SELECT COUNT(*) FROM birthday;
+```
+
+### Select all rows from a table where a column is not null
+
+```SQL
+SELECT price_display from listing WHERE price_display IS NOT NULL;
+```
+
+### Select all unique values (distinct) in a column
+
+```SQL
+SELECT DISTINCT price_display_type from listing;
+```
+
+### Select max from a column (there are other ways)
+
+```SQL
+SELECT * from listing WHERE price_display IS NOT NULL ORDER BY price_display DESC LIMIT 1;
+```
+
