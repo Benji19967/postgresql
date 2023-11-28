@@ -4,6 +4,7 @@ https://wiki.postgresql.org/wiki/Homebrew
 
 - `brew install postgresql@15`
 - `brew services start postgresql`
+- `brew services restart postgresql` if `start` does not work
 - `psql <db name>`: `psql postgres` or `psql birthdays`
 
 # Commands
