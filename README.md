@@ -7,6 +7,10 @@ https://wiki.postgresql.org/wiki/Homebrew
 - `brew services restart postgresql` if `start` does not work
 - `psql <db name>`: `psql postgres` or `psql birthdays`
 
+# Resources
+
+- SQL Cookbook by Anthony Molinaro
+
 # Errors
 
 ## Cannot start DB
@@ -114,3 +118,48 @@ SELECT DISTINCT price_display_type from listing;
 SELECT * from listing WHERE price_display IS NOT NULL ORDER BY price_display DESC LIMIT 1;
 ```
 
+### Concatenate strings from different columns
+
+- Postgres specific
+
+```SQL
+SELECT city||' at latitude '||latitude AS msg FROM listing;
+```
+
+### Use conditional logic (if/else)
+
+```SQL
+SELECT price_display,
+    CASE 
+        WHEN price_display < 1000 THEN 'CHEAP'
+        WHEN price_display > 3000 THEN 'EXPENSIVE'
+        ELSE 'REGULAR' 
+    END AS price_category
+from listing;
+```
+
+### Select rows at random
+
+```SQL
+SELECT id, city, slug from listing ORDER BY random() LIMIT 1;
+```
+
+### Transform NULL values into real values
+
+```SQL
+SELECT COALESCE(price_display, -9999) from listing;
+```
+
+### Search for patterns (in strings)
+
+- Select all slugs that contain the substring zurich
+
+```SQL
+SELECT slug FROM listing WHERE slug LIKE '%zurich%'
+```
+
+- Select all the cities that start with the letter "g" or "G"
+
+```SQL
+SELECT city FROM listing WHERE city LIKE 'g%' or city LIKE 'G%'
+```
