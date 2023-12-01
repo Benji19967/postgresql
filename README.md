@@ -48,6 +48,13 @@ https://tomcam.github.io/postgres/#using-psql
 
 ## SQL
 
+### SQL vs Pandas
+
+- Pulling a lot of data to handle it with Pandas requires a lot of memory,
+network bandwidth, ... .
+- It's better to filter out data early (use SQL to filter at DB level)
+- SQL can be more intuitive (the API to do joins in Pandas can unintuitive)
+
 ### Create a table
 
 ```SQL
