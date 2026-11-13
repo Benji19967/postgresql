@@ -2,9 +2,10 @@
 
 https://wiki.postgresql.org/wiki/Homebrew
 
-- `brew install postgresql@15`
-- `brew services start postgresql`
+- `brew install postgresql@18`
+- `brew services start postgresql@18`
 - `brew services restart postgresql` if `start` does not work
+- `psql --list`: list available databases
 - `psql <db name>`: `psql postgres` or `psql birthdays`
 
 # Resources
